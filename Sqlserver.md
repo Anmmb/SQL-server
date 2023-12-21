@@ -1,29 +1,32 @@
 
-## Kiem tra SQL Server dang chay?
-- Dich vu cua Windows: Services, kiem tra dich vu ```SQL Server```, (co the khoi dong lai, dung, chay). Dam bao dich vu ```SQL Server Browser``` cung dang cahy
+## Kiểm Tra SQL Server Đang Chạy ?
+- Dịch Vụ Của Windows: Services, Kiểm Tra Dịch Vụ ```SQL Server```, (Có Thể Khởi Động Lại, Dừng , Chạy ). Đảm Bảo Dịch Vụ ```SQL Server Browser``` Cũng Đang Chạy
 
-- Cau hinh co ban cua SQL Server: chay chuong trinh 
+- Cấu Hình Cơ Bản SQL Server: Chạy Chương Trình 
 **SQL Server Configuration Manager**.
 
-## Ket noi/quan ly Database SQL Server
-- Dung chuong trinh ```Azure Data Studio``` hoac ```SQL Server Management Studio (SSMS)```
-- Mac dinh ban dau dung phan mem SSMS ket noi bang tai khoan Windows (khong can passwor tren chinh may cai SQL Server)
+## Kết Nối/Quản Lý Database SQL Server
+- Dùng Chương Trình ```Azure Data Studio``` Hoặc ```SQL Server Management Studio (SSMS)```
+- Mặc Định Ban Đầu Sử Dụng Phần Mềm SSMS Kết Nối Bằng Tài KHoản Windows (Không Cần Pass Trên Chính Máy Cài SQL Server)
 ## Kich hoat tai khoan SA (Supper Admin)
-- Chay SSMS, phai chuot vao SQL Server, chon Properties, chon Security, chon muc SQL Server and Windows Authentication mode.
-- Doi password tai khoan sa: chay query sau:
+- Chạy SSMS, Nhấp Phải Chuột vào SQL Server 
+- Chọn Properties, Chọn Security, Chọn Mục SQL Server and Windows Authentication mode.
+- Đổi Password Và Tài Khoản sa(**super-admin**)
+- Chạy query sau:
 ```
 ALTER LOGIN sa ENABLE;
 GO
 ALTER LOGIN sa WITH PASSWORD = '<enterStrongPasswordHere>';
 GO
 ```
-- Luc nay co the ket noi toi SQL Server bang tai khoan sa
+- Lúc Này Có Thể Kết Nối Tới SQL Server Bằng Tài Khoản sa (**SuperAdmin**)
 - Sau cac thiet lap phai khoi dong lai SQL Server
 ## Kich hoat ket noi SQL Server qua mang (Network)
-- Chay SQL Server Configuration Manager, chon SQL Server Network Configuration, chon Protocol for SQL...
-- Nhan phai chuot vao TCP/IP chon Properties, tai tab Protocal chon Enabled -> Yes, sau do tai tab IP Address muc TCP Port chon cong mac dinh (chon 1433 hoac cong co dinh nao do mong muon)
-- Sau cac thiet lap phai khoi dong lai SQL Server
-- Luu y can thiet lap firewall cua Windows cho phep mo cong SQL Server (cong 1433), chi tiet cach mo cong tai: https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access?view=sql-server-ver16#to-open-a-port-in-the-windows-firewall-for-tcp-access
+- Chạy SQL Server Configuration Manager, Chọn SQL Server Network Configuration, chon Protocol for SQL...
+- Nhấn Phải Chuột Vào TCP/IP chon Properties, Tại tab Protocal Chọn Enabled -> Yes, Sau Đó Tại tab IP Address MỤc TCP Port Chọn Cổng Mặc Định (CHọn 1433 Hoặc Cổng Cố Định Nào Đó Mong Muốn)
+- Sau Các THiết Lập Phải Khởi Động Lại SQL Server
+- Lưu Ý Cần Thiết firewall Của Windows Cho Phép Mở Cổng SQL Server (cong 1433), 
+Chi Tiết Cách Mở Cổng Tại: https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access?view=sql-server-ver16#to-open-a-port-in-the-windows-firewall-for-tcp-access
 
-## Su dung SSMS hoac Azure Data Studio
-- Dung de quan ly Database va thuc hien cac cau truy van (query) den co so du lieu (database)
+## Sử Dụng SSMS Hoặc Azure Data Studio
+- Dùng Để Quản Lý Database Và Thực Hiện Các Câu Lệnh Truy Vấn (query) Đến Cơ Sở Dữ Liệu (database)
